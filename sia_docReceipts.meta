@@ -1,0 +1,302 @@
+{
+  "caption": "Оприбуткування ТМЦ",
+  "description": "Оприбуткування ТМЦ",
+  "documentation": "Оприбуткування ТМЦ",
+  "connectionName": "",
+  "descriptionAttribute": "description",
+  "cacheType": "None",
+  "attributes": [
+    {
+      "name": "docNumber",
+      "dataType": "String",
+      "size": 32,
+      "caption": "Номер",
+      "description": "Номер",
+      "documentation": "Номер",
+      "allowNull": false
+    },
+    {
+      "name": "docDate",
+      "dataType": "DateTime",
+      "caption": "Дата документа",
+      "description": "Дата документа",
+      "documentation": "Дата документа",
+      "allowNull": false
+    },
+    {
+      "name": "actualPaymentDate",
+      "dataType": "DateTime",
+      "caption": "Дата оплати",
+      "description": "Дата оплати",
+      "documentation": "Дата оплати",
+      "allowNull": false
+    },
+    {
+      "name": "operationKindID",
+      "dataType": "Entity",
+      "associatedEntity": "ac_operationKind",
+      "caption": "Вид операції",
+      "documentation": "Вид операції",
+      "description": "Вид операції",
+      "allowNull": false
+    },
+    {
+      "name": "organizationID",
+      "dataType": "Entity",
+      "associatedEntity": "org_organization",
+      "caption": "Організація",
+      "documentation": "Організація",
+      "description": "Організація",
+      "allowNull": false
+    },
+    {
+      "name": "departmentID",
+      "dataType": "Entity",
+      "associatedEntity": "org_department",
+      "caption": "Підрозділ",
+      "allowNull": true
+    },
+    {
+      "name": "orgAccountID",
+      "dataType": "Entity",
+      "associatedEntity": "org_orgaccount",
+      "caption": "р/р організації",
+      "documentation": "р/р організації",
+      "description": "р/р організації",
+      "allowNull": false
+    },
+    {
+      "name": "dictEcID",
+      "dataType": "Entity",
+      "associatedEntity": "sia_dictEc",
+      "caption": "КЕКВ",
+      "documentation": "КЕКВ",
+      "description": "КЕКВ"
+    },
+    {
+      "name": "dictFundSourceID",
+      "dataType": "Entity",
+      "associatedEntity": "sia_dictFundSource",
+      "caption": "Джерело фінансування",
+      "documentation": "Джерело фінансування",
+      "description": "Джерело фінансування"
+    },
+    {
+      "name": "contractorID",
+      "dataType": "Entity",
+      "associatedEntity": "cdn_organization",
+      "caption": "Контрагент",
+      "documentation": "Контрагент",
+      "description": "Контрагент",
+      "allowNull": false
+    },
+    {
+      "name": "contrAccountID",
+      "dataType": "Entity",
+      "associatedEntity": "cdn_orgaccount",
+      "caption": "р/р контрагента",
+      "documentation": "р/р контрагента",
+      "description": "р/р контрагента",
+      "allowNull": false
+    },
+    {
+      "name": "curRate",
+      "dataType": "Currency",
+      "caption": "Курс валюти",
+      "description": "Курс валюти",
+      "documentation": "Курс валюти",
+      "defaultValue": "1",
+      "allowNull": true
+    },
+    {
+      "name": "curMult",
+      "dataType": "Int",
+      "caption": "Кратність",
+      "description": "Кратність",
+      "documentation": "Кратність",
+      "defaultValue": "1",
+      "allowNull": true
+    },
+    {
+      "name": "baseSum",
+      "dataType": "Currency",
+      "caption": "Сума без ПДВ",
+      "description": "Сума без ПДВ",
+      "documentation": "Сума без ПДВ"
+    },
+    {
+      "name": "dictTaxRateID",
+      "dataType": "Entity",
+      "associatedEntity": "ac_dictTaxRate",
+      "caption": "Ставка ПДВ",
+      "allowNull": true
+    },
+    {
+      "name": "taxSum",
+      "dataType": "Currency",
+      "caption": "Сума ПДВ",
+      "description": "Сума ПДВ",
+      "documentation": "Сума ПДВ",
+      "defaultValue": "0",
+      "allowNull": false
+    },
+    {
+      "name": "totalSum",
+      "dataType": "Currency",
+      "caption": "Загальна сума",
+      "description": "Загальна сума",
+      "documentation": "Загальна сума",
+      "defaultValue": "0",
+      "allowNull": false
+    },
+    {
+      "name": "purposePayment",
+      "dataType": "String",
+      "size": 200,
+      "caption": "Призначення платежу",
+      "description": "Призначення платежу",
+      "documentation": "Призначення платежу",
+      "allowNull": false
+    },
+    {
+      "name": "accountID",
+      "dataType": "Entity",
+      "associatedEntity": "gl_account",
+      "caption": "Рахунок обліку банку",
+      "documentation": "Рахунок обліку банку",
+      "description": "Рахунок обліку банку"
+    },
+    {
+      "name": "accountKor",
+      "dataType": "Entity",
+      "associatedEntity": "gl_account",
+      "caption": "Кореспондуючий рахунок",
+      "description": "Кореспондуючий рахунок",
+      "documentation": "Кореспондуючий рахунок"
+    },
+    {
+      "name": "docFinObligationID",
+      "dataType": "Entity",
+      "associatedEntity": "sia_docFinObligation",
+      "caption": "Фінансове зобов`язання",
+      "description": "Фінансове зобов`язання",
+      "documentation": "Фінансове зобов`язання",
+      "allowNull": true
+    },
+    {
+      "name": "accountCorrVAT",
+      "dataType": "Entity",
+      "associatedEntity": "gl_account",
+      "caption": "Рахунок кореспонденції для ПДВ",
+      "description": "Рахунок кореспонденції для ПДВ",
+      "documentation": "Рахунок кореспонденції для ПДВ"
+    },
+    {
+      "name": "accountVAT",
+      "dataType": "Entity",
+      "associatedEntity": "gl_account",
+      "caption": "Рахунок обліку ПДВ",
+      "description": "Рахунок обліку ПДВ",
+      "documentation": "Рахунок обліку ПДВ"
+    },
+    {
+      "name": "comment",
+      "dataType": "String",
+      "size": 200,
+      "caption": "Коментар",
+      "description": "Коментар",
+      "documentation": "Коментар"
+    },
+    {
+      "name": "authorID",
+      "dataType": "Entity",
+      "associatedEntity": "org_employee",
+      "caption": "Автор документа",
+      "description": "Автор документа",
+      "documentation": "Автор документа"
+    },
+    {
+      "name": "pNumber",
+      "dataType": "BigInt",
+      "caption": "Номер ПД",
+      "description": "Номер ПД",
+      "documentation": "Номер ПД"
+    },
+    {
+      "name": "docState",
+      "dataType": "Enum",
+      "enumGroup": "AC_DOC_STATE",
+      "caption": "Стан документа",
+      "description": "Стан документа",
+      "documentation": "Стан документа",
+      "defaultValue": "PROJECT",
+      "defaultView": false,
+      "allowNull": false
+    },
+    {
+      "name": "description",
+      "dataType": "String",
+      "size": 128,
+      "caption": "Опис",
+      "description": "Опис документу",
+      "documentation": "Рекомендовано обраховувати як 'Тип + номер + дата', наприклад: 'Прибуткова накладна ПН000012 від 12.03.2017 12:25'",
+      "allowNull": false,
+      "customSettings": {
+        "compositeFields": [
+          "docNumber",
+          "docDate"
+        ],
+        "compositeSeparator": " від "
+      }
+    },
+    {
+      "name": "prepayment",
+      "dataType": "Boolean",
+      "caption": "Попередня оплата",
+      "documentation": "Попередня оплата",
+      "description": "Попередня оплата",
+      "allowNull": true,
+      "defaultValue": "0"
+    },
+    {
+      "name": "protectedArticles",
+      "dataType": "Boolean",
+      "caption": "Оплата захищених статей",
+      "documentation": "Оплата захищених статей",
+      "description": "Оплата захищених статей",
+      "allowNull": true,
+      "defaultValue": "0"
+    },
+    {
+      "name": "accountCorrVATID",
+      "dataType": "Entity",
+      "associatedEntity": "gl_account",
+      "caption": "Рахунок кореспонденції для ПДВ",
+      "documentation": "Рахунок кореспонденції для ПДВ",
+      "description": "Рахунок кореспонденції для ПДВ",
+      "allowNull": true
+    },
+    {
+      "name": "accountVATID",
+      "dataType": "Entity",
+      "associatedEntity": "gl_account",
+      "caption": "Рахунок ПДВ",
+      "documentation": "Рахунок ПДВ",
+      "description": "Рахунок ПДВ",
+      "allowNull": true
+    },
+    {
+      "name": "accountRevenueID",
+      "dataType": "Entity",
+      "associatedEntity": "gl_account",
+      "caption": "Рахунок доходу",
+      "allowNull": true
+    }
+  ],
+  "mixins": {
+    "mStorage": {
+      "simpleAudit": true,
+      "safeDelete": true
+    }
+  }
+}
